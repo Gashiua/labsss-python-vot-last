@@ -1,12 +1,12 @@
 import find_num
 import blackjack
-import tic_tac_toe  # импортируем модуль крестиков-ноликов
+import tic_tac_toe  
 
 def main():
     print("Игры")
     print('1. Угадай число')
     print('2. Блэк_Джэк')
-    print('3. Крестики-нолики')  # добавляем пункт меню
+    print('3. Крестики-нолики')  
     print('0. Выход')
 
     Выбор = input("Выбери игру: ")
@@ -15,7 +15,7 @@ def main():
     elif Выбор == "2":
         blackjack.играть()
     elif Выбор == "3":
-        tic_tac_toe.играть()  # запускаем игру крестики-нолики
+        tic_tac_toe.играть()
     elif Выбор == "0":
         print("Выход")
     else:
