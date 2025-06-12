@@ -1,0 +1,32 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Данные
+data = {
+    'Name': ['Alice', 'Bob', 'Charlie', 'David', 'Eve', 'Anna', 'Mike', 'Lisa', 'John', 'Sarah'],
+    'Age': [20, 21, 19, 22, 20, 21, 20, 19, 22, 20],
+    'Group': ['A', 'B', 'A', 'B', 'C', 'A', 'B', 'C', 'A', 'B'],
+    'Score': [85, 90, 78, 88, 92, 76, 89, 95, 81, 87]
+}
+
+df = pd.DataFrame(data)
+
+# Гистограмма распределения баллов
+plt.figure(figsize=(8, 5))
+plt.hist(df['Score'], bins=5, edgecolor='black', color='skyblue')
+plt.title('Распределение баллов студентов')
+plt.xlabel('Баллы')
+plt.ylabel('Количество студентов')
+plt.grid(axis='y', linestyle='--', alpha=0.7)
+plt.show()
+
+# Столбчатая диаграмма среднего балла по группам
+group_avg = df.groupby('Group')['Score'].mean()
+plt.figure(figsize=(8, 5))
+group_avg.plot(kind='bar', color=['red', 'green', 'blue'], edgecolor='black')
+plt.title('Средний балл по группам')
+plt.xlabel('Группа')
+plt.ylabel('Средний балл')
+plt.xticks(rotation=0)
+plt.grid(axis='y', linestyle='--', alpha=0.7)
+plt.show()
