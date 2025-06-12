@@ -1,0 +1,32 @@
+import pandas as pd
+
+# Создаем датасет прямо в коде
+data = {
+    'Name': ['Alice', 'Bob', 'Charlie', 'David', 'Eve', 'Anna', 'Mike', 'Lisa', 'John', 'Sarah'],
+    'Age': [20, 21, 19, 22, 20, 21, 20, 19, 22, 20],
+    'Group': ['A', 'B', 'A', 'B', 'C', 'A', 'B', 'C', 'A', 'B'],
+    'Score': [85, 90, 78, 88, 92, 76, 89, 95, 81, 87]
+}
+
+# Преобразуем в DataFrame
+df = pd.DataFrame(data)
+
+# 1. Выводим первые 5 строк
+print("Первые 5 строк:")
+print(df.head())
+
+# 2. Информация о данных
+print("\nИнформация о данных:")
+print(df.info())
+
+# 3. Статистика
+print("\nОсновная статистика:")
+print(df.describe())
+
+# 4. Средний балл
+average_score = df['Score'].mean()
+print(f"\nСредний балл студентов: {average_score:.2f}")
+
+# 5. Количество студентов по группам
+print("\nКоличество студентов в группах:")
+print(df['Group'].value_counts())
